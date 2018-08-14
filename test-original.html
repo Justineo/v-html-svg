@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test v-html for SVG</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+new Vue({
+  el: '#app',
+  template: [
+    '<div>',
+      '<p><svg version="1.1" width="16" height="13.8125" viewBox="0 0 256 221" v-html="vue"></svg></p>',
+      '<p><svg version="1.1" role="presentation" width="16" height="16" viewBox="0 0 1200 1200">',
+        '<g v-html="webpack"></g>',
+      '</svg></p>',
+    '</div>'
+  ].join(''),
+  data: {
+    vue: '<polygon points="0,0 128,220.8 256,0 204.8,0 128,132.48 50.56,0 0,0" style="fill: rgb(65, 184, 131);"></polygon><polygon points="50.56,0 128,133.12 204.8,0 157.44,0 128,51.2 97.92,0 50.56,0" style="fill: rgb(53, 73, 94);"></polygon>',
+    webpack: '<path d="M1035.6 879.3l-418.1 236.5V931.6L878 788.3l157.6 91zm28.6-25.9V358.8l-153 88.3V765l153 88.4zm-901.5 25.9l418.1 236.5V931.6L320.3 788.3l-157.6 91zm-28.6-25.9V358.8l153 88.3V765l-153 88.4zM152 326.8L580.8 84.2v178.1L306.1 413.4l-2.1 1.2-152-87.8zm894.3 0L617.5 84.2v178.1l274.7 151.1 2.1 1.2 152-87.8z" style="fill: rgb(142, 214, 251);"></path><path d="M580.8 889.7l-257-141.3v-280l257 148.4v272.9zm36.7 0l257-141.3v-280l-257 148.4v272.9zm-18.3-283.6zM341.2 436l258-141.9 258 141.9-258 149-258-149z" style="fill: rgb(28, 120, 192);"></path>'
+  }
+})
+</script>
+</body>
+</html>
